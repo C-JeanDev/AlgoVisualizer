@@ -11,7 +11,6 @@ RayAlgoViz is an interactive sorting algorithm visualizer built with Raylib. It 
   - Merge Sort (To implement)
   - Quick Sort (To implement)
 - Real-time display of:
-  - Execution time 
   - Number of comparisons
   - Number of assignation/swaps
 
