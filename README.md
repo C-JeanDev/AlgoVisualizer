@@ -55,4 +55,4 @@ RayAlgoViz is an interactive sorting algorithm visualizer built with Raylib. It 
       │── LICENSE.txt         # License file
       │── Makefile            # Build file
       │── README.md           # Documentation
-tion
+
