@@ -8,10 +8,9 @@ RayAlgoViz is an interactive sorting algorithm visualizer built with Raylib. It 
   - Bubble Sort
   - Selection Sort
   - Insertion Sort
-  - Merge Sort (To implement)
+  - Merge Sort 
   - Quick Sort (To implement)
 - Real-time display of:
-  - Execution time 
   - Number of comparisons
   - Number of assignation/swaps
 
@@ -56,4 +55,3 @@ RayAlgoViz is an interactive sorting algorithm visualizer built with Raylib. It 
       │── LICENSE.txt         # License file
       │── Makefile            # Build file
       │── README.md           # Documentation
-tion

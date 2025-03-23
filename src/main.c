@@ -11,16 +11,15 @@
 #define WIDTH 1400
 #define HEIGHT 900
 
-
 int ms = 1;
 int sorted = 0;
-double time_taken = 0; 
-clock_t clock_start,clock_end;
+
 
 extern int i;
 extern int j;
 extern int g_type;
 extern int compare;
+extern int sort_counter;
 extern int flag_stop_sorting;
 extern int assignation_counter;
 
@@ -72,12 +71,18 @@ int main(){
 		DrawText(str_current_algo, 800, 10, 20, GREEN);
 
 		EndDrawing();
-			
+		
+
 		if (g_type == -1){
 
 			if (sorted == 0){
 				button_collision(buttons, len_buttons);
+			}else {
+				
+				rect_sorted_animation(rectangles,ARR_LEN);
+
 			}
+			
 
 			check_collision_generation(rectangles,array,&generate_button);
 			
@@ -89,6 +94,7 @@ int main(){
 					ms--;
 			}
 
+			
 		}
 
 		handle_algo(&str_current_algo, rectangles, ms);
@@ -101,9 +107,7 @@ int main(){
 
 void handle_algo(char **str_current_algo, Rect rectangles[], int ms){
 
-		if (g_type != -1){
-			// time should start here
-		}
+		if (g_type != -1){}
 
 		if (g_type == bubble){ 	
 			rect_bubble_sort(rectangles, ARR_LEN, ms);
@@ -113,10 +117,11 @@ void handle_algo(char **str_current_algo, Rect rectangles[], int ms){
 			rect_selection_sort(rectangles, ARR_LEN, ms);
 			*str_current_algo = "Algorithm: Selection Sort";
 		}else if (g_type == insertion){
-			rect_insertion_sort(rectangles,ARR_LEN, ms);
+			rect_insertion_sort(rectangles,ARR_LEN,ms);
 			*str_current_algo = "Algorithm: Insertion Sort";
 		}else if (g_type == merge){
 			*str_current_algo = "Algorithm: Merge Sort";
+			rect_merge_sort(rectangles, ARR_LEN, ms);
 		}else if (g_type == quick){
 			*str_current_algo = "Algorithm: Quick Sort";
 		}else {
@@ -124,24 +129,15 @@ void handle_algo(char **str_current_algo, Rect rectangles[], int ms){
 		}
 		
 		if (flag_stop_sorting == 1){
-
-			*str_current_algo = "Algorithm: None Palle";
+			sorted = 1;
+			*str_current_algo = "Algorithm: None";
 			flag_stop_sorting = 0;
 			i = 0;
 			j = 0;
 			g_type = -1;
-			sorted = 1;
-
-			// time should end here
 		}		
 
 }
-
-/*
- *
- * When its sorted it should become green for a moment
- *
- */
 
 void check_collision_generation(Rect rect[], int arr[], Button * button){
 	float x = GetMousePosition().x;
@@ -156,6 +152,7 @@ void check_collision_generation(Rect rect[], int arr[], Button * button){
 			compare = 0;
 			assignation_counter = 0;
 			sorted = 0;
+			sort_counter = 0;
 		} 
 	}else {
 		button->color = WHITE; 
@@ -168,26 +165,21 @@ void draw_algo_info(){
 	int y = 10;
 	DrawFPS(10, y);
 	
-	char str[20];
-	sprintf(str,"\t Assignation : %d",assignation_counter);
-	DrawText(str,100,y,20,GREEN);
+	char str_assignation[20];
+	sprintf(str_assignation,"\t Assignation : %d",assignation_counter);
+	DrawText(str_assignation,100,y,20,GREEN);
 
-	char str1[20];
-	sprintf(str1,"\t Compare : %d",compare);
-	DrawText(str1,350,y,20,GREEN );
+	char str_compare[20];
+	sprintf(str_compare,"\t Compare : %d",compare);
+	DrawText(str_compare,350,y,20,GREEN );
 
-	char str2[20];
-	sprintf(str2,"\t Elements : %d", ARR_LEN);
-	DrawText(str2,550,y,20,GREEN);
+	char str_el[20];
+	sprintf(str_el,"\t Elements : %d", ARR_LEN);
+	DrawText(str_el,550,y,20,GREEN);
 	
-	char str3[20];
-	sprintf(str3,"\t Time : %.2f", time_taken);
-	DrawText(str3,1060,y,20,GREEN);
-	
-	char str4[20];
-	sprintf(str4,"\t Speed: %d", ms);
-	DrawText(str4,1250,y,20,GREEN);
-
+	char str_speed[20];
+	sprintf(str_speed,"\t Speed: %d", ms);
+	DrawText(str_speed,1250,y,20,GREEN);
 
 	DrawText("Speed: Arrow UP/DOWN",WIDTH-1200 +( 150 * 6), HEIGHT - 100 + 10 ,20,WHITE);
 }

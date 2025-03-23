@@ -1,10 +1,14 @@
+#include <raylib.h>
+
 typedef struct Rect {
 	
 	float x;
 	float y;
 	int height;
 	int width;
+	Color color;
 
+	int state;
 }Rect; 
 
 Rect create_rect(float x, float y, int width, int height);
@@ -20,5 +24,6 @@ void rect_bubble_sort(Rect rect[], int dim, int frame_step);
 void rect_selection_sort(Rect rect[], int dim, int frame_step);
 void rect_better_bubble(Rect rect[], int dim, int frame_step);
 void rect_insertion_sort(Rect rect[], int dim, int frame_step);
-void rect_merge_sort(Rect rect[], int dim, int frame_step);
-void rect_quick_sort(Rect rect[], int dim, int frame_step);
+void rect_merge_sort(Rect rect[], int size, int frame_step);
+
+void rect_sorted_animation(Rect rect[], int size);

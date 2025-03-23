@@ -5,6 +5,8 @@
 #define WIDTH 1400
 #define HEIGHT 900
 
+enum sort g_type = -1;
+
 Button create_button(float x, float y, int width, int height, enum sort sort_type){
 	Button button;
 	
@@ -23,8 +25,8 @@ void fill_button_array(Button buttons[]){
 	}
 	buttons[1].sort_type = selection;
 	buttons[2].sort_type = insertion;
-	buttons[3].sort_type = merge;
-	buttons[4].sort_type = quick;
+	buttons[3].sort_type = quick;
+	buttons[4].sort_type = merge;
 }
 
 void draw_buttons_utils(void * rect ,Button  button){
@@ -34,7 +36,6 @@ void draw_buttons_utils(void * rect ,Button  button){
 	DrawText(" Array",button.x + 16 ,button.y + font_size,font_size, WHITE);
 }
 
-enum sort g_type = -1;
 
 enum sort button_collision(Button buttons[], int dim){
 
@@ -60,7 +61,7 @@ enum sort button_collision(Button buttons[], int dim){
 
 void draw_buttons(Button buttons[], int dim){
 
-	char names[5][10] = {"Bubble", "Selection", "Insertion", "Merge", "Quick"};
+	char names[5][10] = {"Bubble", "Selection", "Insertion", "Quick", "Merge"};
 	const int font_size = 20;
 	for (int i = 0; i < dim; i++){
 		DrawRectangleLines(buttons[i].x, buttons[i].y, buttons[i].width, buttons[i].height, buttons[i].color);
