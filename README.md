@@ -34,10 +34,13 @@ RayAlgoViz is an interactive sorting algorithm visualizer built with Raylib. It 
      make clean && make && ./algo.out
 
 ## 📸 Screenshots
-![Screenshot from 2025-03-19 22-53-38](https://github.com/user-attachments/assets/45cc5793-61dd-4030-977a-ed4f2455ded3)
-![Screenshot from 2025-03-19 22-55-15](https://github.com/user-attachments/assets/76067f74-295b-4f4d-a752-a6cc2f85a8f0)
-![Screenshot from 2025-03-19 22-55-33](https://github.com/user-attachments/assets/06ba9143-51ce-4b80-aa41-06b2685c4c9b)
+![Screenshot from 2025-03-24 13-49-51](https://github.com/user-attachments/assets/51476fd6-e884-4fe4-aed8-61b84167ca26)
+![Screenshot from 2025-03-24 13-52-14](https://github.com/user-attachments/assets/8224ff8c-c2cb-432f-b434-dae00e13d63d)
+![Screenshot from 2025-03-24 13-54-17](https://github.com/user-attachments/assets/6423e206-91e2-4e78-93b4-c47381139851)
 
+# 💡 Future Implementations
+  - Quick Sort Algorithm
+  - Red rectangles when accessed and/or compared
 
 ## 🏗 Project Structure
 
