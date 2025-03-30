@@ -27,7 +27,7 @@ RayAlgoViz is an interactive sorting algorithm visualizer built with Raylib. It 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/RayAlgoViz.git
+   git clone https://github.com/C-JeanDev/RayAlgoViz.git
    cd AlgoVisualizer
 2. Makefile:
      ```bash
